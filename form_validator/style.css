@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;1,100;1,300;1,400;1,500;1,700;1,800&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: aliceblue;
+    font-family: 'Alegreya Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+}
+.container{
+    background-color: cadetblue;
+    border-radius: 10px;
+    width: 50%;
+    position: relative;
+    
+}
+h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+
+}
+.form-control{
+    
+    padding: 20px;
+    position: relative;
+
+}
+.form-control label{
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.form-control input{
+    display: block;
+    border: 2px solid rgb(185, 216, 218);
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    
+}
+.form-control input:focus{
+    outline: 0;
+    border-color: #777;
+}
+.form-control.success input{
+    border-color: #2ecc71;
+}
+.form-control.error input{
+    border-color: red;
+}
+.form-control small{
+    color: rgba(255, 0, 0, 0.677);
+    font-size: 18px;
+    visibility: hidden;
+    
+}
+.form-control.error small{
+    visibility: visible;
+}
+button{
+    text-align: center;
+    font-size: 30px;
+    background-color: rgba(10, 227, 61, 0.878);
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
