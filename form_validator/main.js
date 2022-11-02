@@ -16,6 +16,16 @@ function showSucces(input){
     formControl.className = 'form-control success';
 }
 
+//function valid email checker
+
+function isValidEmail(email){
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+}
+
 //event listenr for form validator form
 form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -28,7 +38,10 @@ form.addEventListener('submit', function(e){
 
     if(email.value === ''){
         showError(email,'Email is required');
-    }else{
+    }else if(!isValidEmail(email.value)){
+      showError(email, 'Please provide a valid email address');
+    }
+    else{
         showSucces(email);
     }
     if (password.value == '') {
@@ -38,7 +51,10 @@ form.addEventListener('submit', function(e){
     }
     if (password2.value == '') {
       showError(password2,'Password is required');
-    } else {
+    } else if (password.value != password2.value){
+      showError(password, 'Password is not matched');
+    }
+     else {
       showSucces(password2);
     }
 });
